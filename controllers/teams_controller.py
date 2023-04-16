@@ -19,7 +19,7 @@ def new_team():
 
 
 # CREATE  /teams  
-@teams_blueprint.route("/team", methods=["POST"])
+@teams_blueprint.route("/teams", methods=["POST"])
 def create_team():
     name = request.form["name"]
     arena = request.form["arena"]
@@ -30,13 +30,13 @@ def create_team():
     return redirect("/teams")
 
 # EDIT    /teams/<id>/edit   teams/edit.html
-@teams_blueprint.route("/team/<id>/edit")
+@teams_blueprint.route("/teams/<id>/edit")
 def edit_team(id):
     team = team_repository.select(id)
     return render_template("teams/edit.html", team=team)
 
 
-# UPDATE   /teams/`<id>  /teams
+# UPDATE   /teams/<id>  /teams
 @teams_blueprint.route("/teams/<id>", methods={"POST"})
 def update_team(id):
     name = request.form["name"]

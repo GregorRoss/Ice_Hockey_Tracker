@@ -3,7 +3,7 @@ from models.game import Game
 
 
 def save(game):
-    sql = "INSERT INTO games (game.game_date, game.game_time, game.location) VALUES (%s,%s,%s) RETURNING id"
+    sql = "INSERT INTO games (game_date, game_time, location) VALUES (%s,%s,%s) RETURNING id"
     values =[game.game_date, game.game_time, game.location]
     results = run_sql(sql, values)
     id = results[0]['id']
