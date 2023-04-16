@@ -8,7 +8,7 @@
 <section>
     <p>{{ team.team_name }}</p>
     <p>{{ team.arena_name }}</p>
-    <a href="/teams/{{ team.id }}/edit"></a>
+    <a href="/teams/{{ team.id }}/edit"> Edit</a>
     <form action="/teams/{{ team.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>

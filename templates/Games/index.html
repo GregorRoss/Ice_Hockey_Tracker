@@ -3,11 +3,11 @@
 
 <h2>Games</h2>
 
-{% for game in Games %}
+{% for game in games %}
 
 <section>
     <p>{{ game.id }} </p>
-    <p>{{ game.game_date }} </p>
+    <p>{{ game.game_date }} -- {{ game.game_time }} </p>
     <p>{{ game.location }} </p>
     <a href="/games/{{ game.id }}/edit"></a>
     <form action="/games/{{ games.id }}/delete" method="POST">

@@ -44,7 +44,7 @@ def update_game(id):
 
 
 # Delete   /games/<id>/delete   /games
-@game_repository.route("/games/<id>/delete", methods=["POST"])
+@games_blueprint.route("/games/<id>/delete", methods=["POST"])
 def delete_game(id):
     game_repository.delete(id)
     return redirect("/games")

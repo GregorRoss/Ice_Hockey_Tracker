@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Games</h2>
+<h2>Games Details</h2>
 
-{% for game in Games %}
+{% for league in leagues %}
 
 <section>
-    <p>{{ game.homw_team }} vs  {{ game.away_team }}</p>
-    <p>{{ game.game_date }}  at  {{ game.game_time }}</p>
+    <p>{{ league.game.id }}</p>
+    <p>{{ league.team.team_name }}</p>
+    <p>{{ league.season }}</p>
+    <p>{{ league.played }}</p>
+    <p>{{ league.goal_score}}  and  {{ league.penalties }}</p>
     <a href="/games/{{ game.id }}/edit"></a>
     <form action="/games/{{ games.id }}/delete" method="POST">
         <input type="submit" value="Delete">
