@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Game</h2>
+
+<form action="/games" method="POST">
+    <div>
+        <label for="game_date">Game Date:</label>
+        <input type="text" id="game_date" name="game_date">
+        <label for="game_time">Game Time:</label>
+        <input type="text" id="game_time" name="game_time">
+        <label for="location">Game Location:</label>
+        <input type="text" id="location" name="location">
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

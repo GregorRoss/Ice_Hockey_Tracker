@@ -6,9 +6,8 @@
 {% for game in Games %}
 
 <section>
-    <p>{{ game.id }} </p>
-    <p>{{ game.game_date }} </p>
-    <p>{{ game.location }} </p>
+    <p>{{ game.homw_team }} vs  {{ game.away_team }}</p>
+    <p>{{ game.game_date }}  at  {{ game.game_time }}</p>
     <a href="/games/{{ game.id }}/edit"></a>
     <form action="/games/{{ games.id }}/delete" method="POST">
         <input type="submit" value="Delete">

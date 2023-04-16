@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS leagues;
 DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS games;
 
@@ -11,13 +12,19 @@ CREATE TABLE teams (
 
 CREATE TABLE games (
   id SERIAL PRIMARY KEY,
-  home_team INT NOT NULL REFERENCES teams(id)
-  away_team INT NOT NULL REFERENCES teams(id)
   game_date VARCHAR(12),
   game_time VARCHAR(6),
-  game_status VARCHAR(25),
-  home_score INT
-  away_score INT
-  home_penalties INT
-  away_penalties int
+  location VARCHAR(25)
+);
+
+CREATE TABLE leagues (
+    id SERIAL PRIMARY KEY,
+    game_id INT NOT NULL REFERENCES games(id),
+    team_id INT NOT NULL REFERENCES teams(id),
+    season VARCHAR(12),
+    played VARCHAR(4),
+    result VARCHAR(4),
+    goals_score INT,
+    penalties INT,
+    ot VARCHAR(4)
 );
