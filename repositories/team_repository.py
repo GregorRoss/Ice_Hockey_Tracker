@@ -2,9 +2,9 @@ from db.run_sql import run_sql
 from models.team import Team
 
 def save(team):
-    sql = "INSERT INTO teams (team_name, arena_name, team_location, team_website) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [team.team_name, team.arena_name, team.team_location, team.team_website]
-    results =run_sql(sql, values)
+    sql = "INSERT INTO teams (team_name, arena_name, team_location, team_website, team_logo) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = [team.team_name, team.arena_name, team.team_location, team.team_website, team.team_logo]
+    results = run_sql(sql, values)
     id = results[0]['id']
     team.id = id
 
@@ -13,7 +13,7 @@ def select_all():
     sql = "SELECT * FROM teams"
     results = run_sql(sql)
     for result in results:
-        team = Team(result["team_name"],result["arena_name"],result["team_location"],result["team_website"])
+        team = Team(result["team_name"],result["arena_name"],result["team_location"],result["team_website"],result["team_logo"],result["id"])
         teams.append(team)
     return teams
 
@@ -25,7 +25,7 @@ def select(id):
     # check for resutls if empty
     if results:
         result = results[0]
-        team = Team(result["team_name"],result["arena_name"],result["team_location"],result["team_website"],result["id"])
+        team = Team(result["team_name"],result["arena_name"],result["team_location"],result["team_website"],result["team_logo"],result["id"])
     return team
 
 def delete_all():
@@ -39,5 +39,5 @@ def delete(id):
 
 def update(team):
     sql = "UPDATE teams SET team_name = %s, arena_name = %s, team_location = %s, team_website =%s WHERE id = %s"
-    values = [team.team_name, team.arena_name, team.team_location, team.team_website, team.id]
+    values = [team.team_name, team.arena_name, team.team_location, team.team_website, team.team_logo, team.id]
     run_sql(sql, values)

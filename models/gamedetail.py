@@ -1,8 +1,7 @@
-class League:
-    def __init__(self, season, game, team, played, result, goal_score, penalties, ot, id = None):
+class Gamedetail:
+    def __init__(self, game, team, played, result, goal_score, penalties, ot, id = None):
         self.game = game
         self.team = team
-        self.season = season
         self.played = played
         self.result = result
         self.goal_score = goal_score

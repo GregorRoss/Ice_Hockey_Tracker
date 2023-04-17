@@ -25,7 +25,8 @@ def create_team():
     arena = request.form["arena_name"]
     location = request.form["team_location"]
     website = request.form["team_website"]
-    new_team = Team(name, arena, location, website)
+    team_logo = request.form["team_logo"]
+    new_team = Team(name, arena, location, website, team_logo)
     team_repository.save(new_team)
     return redirect("/teams")
 
@@ -43,7 +44,8 @@ def update_team(id):
     arena = request.form["arena_name"]
     location = request.form["team_location"]
     website = request.form["team_website"]
-    team = Team(name, arena, location, website)
+    team_logo = request.form["team_logo"]
+    team = Team(name, arena, location, website, team_logo)
     team_repository.update(team)
     return redirect("/teams")
 
@@ -52,3 +54,4 @@ def update_team(id):
 def delete_team(id):
     team_repository.delete(id)
     return redirect("/teams")
+

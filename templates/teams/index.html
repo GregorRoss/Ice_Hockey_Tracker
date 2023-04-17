@@ -6,6 +6,7 @@
 {% for team in teams %}
 
 <section>
+    <p>{{ team.id }}</p>
     <p>{{ team.team_name }}</p>
     <p>{{ team.arena_name }}</p>
     <a href="/teams/{{ team.id }}/edit"> Edit</a>

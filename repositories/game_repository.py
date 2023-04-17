@@ -3,8 +3,8 @@ from models.game import Game
 
 
 def save(game):
-    sql = "INSERT INTO games (game_date, game_time, location) VALUES (%s,%s,%s) RETURNING id"
-    values =[game.game_date, game.game_time, game.location]
+    sql = "INSERT INTO games (game_date, game_time, location, season) VALUES (%s,%s,%s,%s) RETURNING id"
+    values =[game.game_date, game.game_time, game.location, game.season]
     results = run_sql(sql, values)
     id = results[0]['id']
     game.id = id
@@ -14,7 +14,7 @@ def select_all():
     sql = "SELECT * FROM games"
     results = run_sql(sql)
     for result in results:
-        game = Game(result["game_date"], result["game_time"], result["location"], result["id"])
+        game = Game(result["game_date"], result["game_time"], result["location"], result["season"], result["id"])
         games.append(game)
     return games
 
@@ -25,7 +25,7 @@ def select(id):
     # check for resutls if empty
     if results:
         result = results[0]
-        game = Game(result["game_date"], result["game_time"], result["location"], result["id"])
+        game = Game(result["game_date"], result["game_time"], result["location"], result["season"],  result["id"])
     return game
 
 def delete_all():
@@ -38,8 +38,8 @@ def delete(id):
     run_sql(sql, values)
 
 def update(game):
-    sql = "UPDATE games SET (game_date, game_time, location) = (%s,%s,%s) WHERE id = %s"
-    values =[game.game_date, game.game_time, game.location, game.id]
+    sql = "UPDATE games SET (game_date, game_time, location, season) = (%s,%s,%s,%s) WHERE id = %s"
+    values =[game.game_date, game.game_time, game.location, game.season, game.id]
     run_sql(sql,values)
 
 

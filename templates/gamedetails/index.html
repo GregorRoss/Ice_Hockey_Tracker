@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Games Details</h2>
+
+{% for gamedetail in gamedetails %}
+
+<section>
+    <p>{{ gamedetail.game.id }}</p>
+    <p>{{ gamedetail.team.team_name }}</p>
+    <p>{{ gamedetail.result }}</p>
+    <p>{{ gamedetail.played }}</p>
+    <p>{{ gamedetail.goal_score}}  and  {{ gamedetail.penalties }}</p>
+    <a href="/gamedetails/{{ gamedetails.id }}/edit"></a>
+    <form action="/gamedetails/{{ gamedetails.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a  Game</h2>
+
+<form action="/games" method="POST">
+    <div>
+        <label for="game_date">Game Date:</label>
+        <input type="text" id="game_date" name="game_date" value = "{{games.game_date}}">
+        <label for="game_time">Game Time:</label>
+        <input type="text" id="game_time" name="game_time" value = "{{games.game_time}}">
+        <label for="location">Game Location:</label>
+        <input type="text" id="location" name="location" value = "{{games.location}}">
+        <label for="season">Season:</label>
+        <input type="text" id="season" name="season"value = "{{games.season}}">
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

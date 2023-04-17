@@ -22,7 +22,8 @@ def create_game():
     game_date =request.form["game_date"]
     game_time = request.form["game_time"]
     location = request.form["location"]
-    new_game = Game(game_date, game_time, location)
+    season = request.form["season"]
+    new_game = Game(game_date, game_time, location, season)
     game_repository.save(new_game)
     return redirect("/games")
 
@@ -38,7 +39,8 @@ def update_game(id):
     game_date =request.form["game_date"]
     game_time = request.form["game_time"]
     location = request.form["location"]
-    game = Game(game_date, game_time, location, id)
+    season = request.form["season"]
+    game = Game(game_date, game_time, location, season, id)
     game_repository.update(game)
     return redirect("/games")
 
