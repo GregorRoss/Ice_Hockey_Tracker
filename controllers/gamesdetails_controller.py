@@ -7,14 +7,14 @@ gamedetails_blueprint = Blueprint("gamedetails", __name__)
 
 # INDEX /gamedetails gamedetails/index.html
 @gamedetails_blueprint.route("/gamedetails")
-def gamedetails():
+def gamedetail():
     gamedetails = gamedetail_repository.select_all()
     return render_template("gamedetails/index.html", gamedetails=gamedetails)
 
 
 # NEW  /gamedetails/new   gamedetails/new.html
 @gamedetails_blueprint.route("/gamedetails/new")
-def new_league():
+def new_gamedetail():
     teams = team_repository.select_all()
     games = game_repository.select_all()
     return render_template("gamedetails/new.html", teams=teams, games=games)

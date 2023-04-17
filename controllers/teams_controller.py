@@ -45,7 +45,7 @@ def update_team(id):
     location = request.form["team_location"]
     website = request.form["team_website"]
     team_logo = request.form["team_logo"]
-    team = Team(name, arena, location, website, team_logo)
+    team = Team(name, arena, location, website, team_logo,id)
     team_repository.update(team)
     return redirect("/teams")
 

@@ -3,7 +3,7 @@
 
 <h2>Update a Team</h2>
 
-<form action="/teams/{{ team.id }}" method="POST">
+<form action="/teams/{{team.id}}" method="POST">
     <div>
         <label for="team_name">Team Name:</label>
         <input type="text" id="team_name" name="team_name" value="{{team.team_name}}">
@@ -14,8 +14,7 @@
         <label for="team_website">Team Website:</label>
         <input type="text" id="team_website" name="team_website"value="{{team.team_website}}">
         <label for="team_logo">Team Logo:</label>
-        <input type="text" id="team_logo" name="team_logo" value="{{team.team_logo}}">
-        <br>       
+        <input type="text" id="team_logo" name="team_logo" value="{{team.team_logo}}">   
         <input type="submit">
     </div>
 </form>

@@ -5,7 +5,7 @@ from models.team import Team
 from repositories import game_repository, team_repository
 
 def save(gamedetail):
-    sql = "INSERT INTO gamedetails (game_id, team_id, played, result, goal_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id"
+    sql = "INSERT INTO gamedetails (game_id, team_id, played, result, goals_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id"
     values = [gamedetail.game.id, gamedetail.team.id, gamedetail.played, gamedetail.result, gamedetail.goal_score, gamedetail.penalties, gamedetail.ot]
     results = run_sql(sql,values)
     id = results[0]["id"]
@@ -18,7 +18,7 @@ def select_all():
     for result in results:
         game = game_repository.select(result["game_id"])
         team = team_repository.select(result["team_id"])
-        gamedetail = Gamedetail(game,team,result["played"],result["result"],result["goal_score"],result["penalties"],result["ot"],result["id"])
+        gamedetail = Gamedetail(game,team,result["played"],result["result"],result["goals_score"],result["penalties"],result["ot"],result["id"])
         gamedetails.append(gamedetail)
     return gamedetails
 
@@ -32,7 +32,7 @@ def select(id):
         result = results[0]
         game = game_repository.select(result["game_id"])
         team = team_repository.select(result["team_id"])
-        gamedetail = Gamedetail(game,team,result["played"],result["result"],result["goal_score"],result["penalties"],result["ot"],result["id"])
+        gamedetail = Gamedetail(game,team,result["played"],result["result"],result["goals_score"],result["penalties"],result["ot"],result["id"])
     return gamedetail
 
 def delete_all():
@@ -45,6 +45,6 @@ def delete(id):
     run_sql(sql,values)
 
 def update(gamedetail):
-    sql = "UPDATE gamedetails SET (game_id, team_id, played, result, goal_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
-    values = [gamedetail.game.id, gamedetail.team.id, gamedetail.season, gamedetail.played, gamedetail.result, gamedetail.goal_score, gamedetail.penalties, gamedetail.ot, gamedetail.id]
+    sql = "UPDATE gamedetails SET (game_id, team_id, played, result, goals_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    values = [gamedetail.game.id, gamedetail.team.id, gamedetail.played, gamedetail.result, gamedetail.goals_score, gamedetail.penalties, gamedetail.ot, gamedetail.id]
     run_sql(sql,values)
