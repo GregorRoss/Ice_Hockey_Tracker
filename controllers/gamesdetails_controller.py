@@ -29,10 +29,11 @@ def create_gamedetail():
     game = game_repository.select(game_id)
     played = request.form["played"]
     result = request.form["result"]
-    goal_score = request.form["goal_score"]
+    goal_score = request.form["goals_score"]
     penalties = request.form["penalties"]
     ot = request.form["ot"]
-    new_gamedetail = Gamedetail(team,game,played,result,goal_score,penalties,ot)
+    new_gamedetail = Gamedetail(game,team,played,result,goal_score,penalties,ot)
+
     gamedetail_repository.save(new_gamedetail)
     return redirect("/gamedetails")
 
@@ -49,7 +50,7 @@ def edit_gamedetail(id):
 
 # UPDATE   /gamedetails/<id>  /gamedetails
 @gamedetails_blueprint.route("/gamedetails/<id>", methods=["POST"])
-def update_gamedetail():
+def update_gamedetail(id):
     team_id = request.form["team_id"]
     game_id = request.form["game_id"]
     team = team_repository.select(team_id)
@@ -59,12 +60,12 @@ def update_gamedetail():
     goal_score = request.form["goal_score"]
     penalties = request.form["penalties"]
     ot = request.form["ot"]
-    gamedetail = Gamedetail(team,game,played,result,goal_score,penalties,ot)
+    gamedetail = Gamedetail(team,game,played,result,goal_score,penalties,ot,id)
     gamedetail_repository.update(gamedetail)
     return redirect("/gamedetails")
 
 # Delete   /gamedetails/<id>/delete   /gamedetails
-@gamedetails_blueprint.route("/gamedetails/<id>/delete", methods=["POST"])
+@gamedetails_blueprint.route("/gamedetails/delete/<id>", methods=["POST"])
 def delete_gamedetail(id):
     gamedetail_repository.delete(id)
     return redirect("/gamedetails")

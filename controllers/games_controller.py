@@ -34,7 +34,7 @@ def edit_team(id):
     return render_template("games/edit.html", game=game)
 
 # UPDATE   /games/<id>  /games
-@games_blueprint.route("/games", methods=["POST"])
+@games_blueprint.route("/games/<id>", methods=["POST"])
 def update_game(id):
     game_date =request.form["game_date"]
     game_time = request.form["game_time"]
