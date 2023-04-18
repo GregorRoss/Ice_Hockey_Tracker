@@ -6,14 +6,19 @@
 <form action="/games/{{game.id}}" method="POST">
     <div>
         <label for="game_date">Game Date:</label>
-        <input type="text" id="game_date" name="game_date" value = "{{game.game_date}}">
+        <input type="date" id="game_date" name="game_date" value = "{{game.game_date}}">
+        <br>
         <label for="game_time">Game Time:</label>
-        <input type="text" id="game_time" name="game_time" value = "{{game.game_time}}">
+        <input type="time" id="game_time" name="game_time" value = "{{game.game_time}}">
+        <br>
         <label for="location">Game Location:</label>
         <input type="text" id="location" name="location" value = "{{game.location}}">
+        <br>
         <label for="season">Season:</label>
         <input type="text" id="season" name="season"value = "{{game.season}}">
+        <br>
         <input type="submit">
+
     </div>
 </form>
 

@@ -22,26 +22,44 @@
   .eihllogo {
     float: left;
   }
+nav {
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+    margin: 1rem auto;
+    background-color: #eee;
+  }
 
-  nav {}
-
-  nav ul {
-    list-style-type: none;
+nav ul {
     margin: 0;
     padding: 0;
-  }
+    list-style-type: none;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+  
+}
   nav a {
     color: #00bff3;
     text-decoration: none;
-    font-size: 1.2rem;
     font-weight: 600;
+    display: block;    
+    padding: 0.5rem 1rem;
   }
 
 nav a:focus {
-    background-color: #f0c808;
     color: black;
 }
 
 nav a:hover {
     color: #ff583d;
+    background-color: #f0c808;
 }
+
+
+
+
+ 
+
+ 
+
+
