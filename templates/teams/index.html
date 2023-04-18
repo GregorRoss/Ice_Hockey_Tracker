@@ -2,13 +2,14 @@
 {% block content %}
 
 <h2>Teams</h2>
+<a href="/teams/new">Add Team</a>
 
 {% for team in teams %}
  
 <div class="grid-container">
     <div class="grid-item">
         <a href="/teams/show.html/{{team.id}}">
-        <img src="/static/images/{{team.team_logo}}" width="70" height="70">
+        <img src="/static/images/{{team.team_logo}}" width="60" height="60">
         </a>
     </div>
 </div>

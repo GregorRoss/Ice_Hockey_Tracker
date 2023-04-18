@@ -1,6 +1,6 @@
 class Gamedetail:
     def __init__(self, game, team, played, result, goals_score, penalties, ot, id = None):
-        self.game = game
+        self.game = game                # GameDetail
         self.team = team
         self.played = played
         self.result = result

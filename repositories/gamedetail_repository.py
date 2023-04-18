@@ -24,6 +24,7 @@ def select_all():
     return gamedetails
 
 def select(id):
+
     gamedetail = None
     sql = "SELECT * FROM gamedetails WHERE id = %s"
     values = [id]
@@ -70,4 +71,9 @@ def update(gamedetail):
 # SQL -  pull back the home / away teams along with the score and penalties
 # Select gd.game_id, games.game_date,(SELECT HT.team_name FROM teams as HT WHERE HT.id = gd.team_id AND gd.played = 'Home') AS Home_Team,gd.goals_score,gd.penalties, (SELECT AT.team_name FROM teams as AT WHERE AT.id = gd.team_id AND gd.played = 'Away') AS Away_Team FROM gamedetails as gd INNER JOIN games ON games.id = gd.game_id;
 
+# SQL - shows who was plaing and results in given games
+# Select gd.game_id, games.game_date, gd.played, gd.result,(SELECT HT.team_name FROM teams as HT WHERE HT.id = gd.team_id AND gd.played = 'Home') AS Home_Team,gd.goals_score,gd.penalties, (SELECT AT.team_name FROM teams as AT WHERE AT.id = gd.team_id AND gd.played = 'Away') AS Away_Team FROM gamedetails as gd INNER JOIN games ON games.id = gd.game_id WHERE gd.game_id IN (1,6);
+
+#SQL - gets the game ID's that a team have been playing in.
+#SELECT  gd.game_id FROM teams as t INNER JOIN gamedetails as gd ON gd.team_id = t.id WHERE t.id = 1; 
 

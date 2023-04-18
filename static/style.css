@@ -19,3 +19,29 @@
     width: 400px;
     margin: 0 auto;
   }
+  .eihllogo {
+    float: left;
+  }
+
+  nav {}
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: #00bff3;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+nav a:focus {
+    background-color: #f0c808;
+    color: black;
+}
+
+nav a:hover {
+    color: #ff583d;
+}

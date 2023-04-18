@@ -24,6 +24,8 @@ def get_team_games(id):
 
     game_pairs = []
 
+    #pdb.set_trace()
+
     for match in games_for_team:
         game_pair = {
             "home": None,
@@ -31,13 +33,14 @@ def get_team_games(id):
             "away": None,
             "away_name": None
         }
-        if match.played == "home":
+        if match.played.lower() == "home":
             game_pair["home"] = match
         else:
             game_pair["away"] = match
+
         for opp_match in all_details:
-            if opp_match.game.id == match.game.id:
-                if game_pair["home"] == None:
+            if opp_match.game.id == match.game.id and opp_match.team.id != match.team.id:
+                if not game_pair["home"]:
                     game_pair["home"] = opp_match
                 else:
                     game_pair["away"] = opp_match
