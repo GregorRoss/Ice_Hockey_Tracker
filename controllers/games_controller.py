@@ -27,8 +27,8 @@ def create_game():
     game_repository.save(new_game)
     return redirect("/games")
 
-# EDIT    /games/<id>/edit   games/edit.html
-@games_blueprint.route("/games/<id>/edit")
+# EDIT    /games/edit/<id>   games/edit.html
+@games_blueprint.route("/games/edit/<id>")
 def edit_team(id):
     game = game_repository.select(id)
     return render_template("games/edit.html", game=game)
@@ -45,8 +45,8 @@ def update_game(id):
     return redirect("/games")
 
 
-# Delete   /games/<id>/delete   /games
-@games_blueprint.route("/games/<id>/delete", methods=["POST"])
+# Delete   /games/delete/<id>   /games
+@games_blueprint.route("/games/delete/<id>", methods=["POST"])
 def delete_game(id):
     game_repository.delete(id)
     return redirect("/games")

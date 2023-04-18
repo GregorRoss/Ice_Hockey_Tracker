@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Teams</h2>
+<section>
+    <img src="/static/images/{{team.team_logo}}" width="120" height="120">
+    <p>Team ID: {{ team.id }}</p>
+    <p>Team Name: {{ team.team_name }}</p>
+    <p>Arena Name: {{ team.arena_name }}</p>
+    <p>Team Location: {{ team.arena_location }}</p>
+    <p>Team Website: {{ team.team_website}}</p>
+
+    <p>
+    <a href="/teams/edit/{{team.id}}"> Edit</a>
+    </p>
+    <form action="/teams/delete/{{team.id}}" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+{% for pair in game_pairs %}
+
+<section>
+    <p>======================</p>
+    <h1>Game</h1>
+    <h2>Home</h2>
+    {{pair["home_name"]}}
+    {{pair["home"].game.id}}
+    {{pair["home"].team.id}}
+    {{pair["home"].result}}
+    <p>goals</p>
+    {{pair["home"].goals_score}}
+    <p>Played</p>
+    {{pair["home"].played}}
+
+    <h2>Away</h2>
+    {{pair["away_name"]}}
+    {{pair["away"].game.id}}
+    {{pair["away"].team.id}}
+    {{pair["away"].result}}
+    <p>goals</p>
+    {{pair["away"].goals_score}}
+    <p>Played</p>
+    {{pair["away"].played}}
+    <p>======================</p>
+
+
+</section>
+
+{% endfor %}
+{% endblock %}

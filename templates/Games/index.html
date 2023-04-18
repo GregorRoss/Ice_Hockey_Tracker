@@ -9,8 +9,8 @@
     <p>{{ game.id }} </p>
     <p>{{ game.game_date }} -- {{ game.game_time }} </p>
     <p>{{ game.location }} </p>
-    <a href="/games/{{ game.id }}/edit"> Edit:</a>
-    <form action="/games/{{ games.id }}/delete" method="POST">
+    <a href="/games/edit/{{game.id}}"> Edit:</a>
+    <form action="/games/delete/{{game.id}}" method="POST">
         <input type="submit" value="Delete">
     </form>
 </section>

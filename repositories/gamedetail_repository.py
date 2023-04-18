@@ -7,7 +7,7 @@ from repositories import game_repository, team_repository
 def save(gamedetail):
     sql = "INSERT INTO gamedetails (game_id, team_id, played, result, goals_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id"
 
-    values = [gamedetail.game.id, gamedetail.team.id, gamedetail.played, gamedetail.result, gamedetail.goal_score, gamedetail.penalties, gamedetail.ot]
+    values = [gamedetail.game.id, gamedetail.team.id, gamedetail.played, gamedetail.result, gamedetail.goals_score, gamedetail.penalties, gamedetail.ot]
     results = run_sql(sql,values)
     id = results[0]["id"]
     gamedetail.id = id
@@ -49,3 +49,25 @@ def update(gamedetail):
     sql = "UPDATE gamedetails SET (game_id, team_id, played, result, goals_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
     values = [gamedetail.game.id, gamedetail.team.id, gamedetail.played, gamedetail.result, gamedetail.goals_score, gamedetail.penalties, gamedetail.ot, gamedetail.id]
     run_sql(sql,values)
+
+
+# SQL to bring back team games
+# SELECT teams.team_name, gamedetails.played, gamedetails.result, gamedetails.goals_score, gamedetails.penalties, games.id, games.game_date FROM teams INNER JOIN gamedetails ON gamedetails.team_id = teams.id INNER JOIN games on games.id = gamedetails.game_id WHERE teams.id = 55 ORDER BY games.id;
+
+# SQL to bring back home team games
+#SELECT games.id, games.game_date, HT.team_name AS home_team, gamedetails.result, gamedetails.goals_score FROM games LEFT JOIN gamedetails ON gamedetails.game_id = games.id LEFT JOIN teams as HT on HT.id = gamedetails.team_id WHERE gamedetails.played = 'Home';
+
+# SQL to bring back away team games
+#SELECT games.id, games.game_date, AT.team_name AS away_team, gamedetails.result, gamedetails.goals_score FROM games LEFT JOIN gamedetails ON gamedetails.game_id = games.id LEFT JOIN teams as AT on AT.id = gamedetails.team_id WHERE gamedetails.played = 'Away';
+
+# SQL to bring back list of teams with the number of games played and number of goals
+#  select teams.team_name, COUNT(gamedetails.id) AS games_played, SUM(gamedetails.goals_score) AS GOALS from teams INNER JOIN gamedetails ON gamedetails.team_id = teams.id GROUP BY teams.team_name ORDER BY goals DESC;
+
+# SQL -  not right but need to keep working on the points calc
+# SELECT team_id, COUNT(CASE WHEN played = 'Win' THEN 2 END) AS POINTS FROM gamedetails GROUP BY team_id;
+
+
+# SQL -  pull back the home / away teams along with the score and penalties
+# Select gd.game_id, games.game_date,(SELECT HT.team_name FROM teams as HT WHERE HT.id = gd.team_id AND gd.played = 'Home') AS Home_Team,gd.goals_score,gd.penalties, (SELECT AT.team_name FROM teams as AT WHERE AT.id = gd.team_id AND gd.played = 'Away') AS Away_Team FROM gamedetails as gd INNER JOIN games ON games.id = gd.game_id;
+
+

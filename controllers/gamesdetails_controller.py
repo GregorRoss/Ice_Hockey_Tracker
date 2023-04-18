@@ -38,8 +38,8 @@ def create_gamedetail():
     return redirect("/gamedetails")
 
 
-# EDIT    /gamedetails/<id>/edit   gamedetails/edit.html
-@gamedetails_blueprint.route("/gamedetails/<id>/edit")
+# EDIT    /gamedetails/edit/<id> gamedetails/edit.html
+@gamedetails_blueprint.route("/gamedetails/edit/<id>")
 def edit_gamedetail(id):
     gamedetail = gamedetail_repository.select(id)
     teams = team_repository.select_all()
@@ -64,7 +64,7 @@ def update_gamedetail(id):
     gamedetail_repository.update(gamedetail)
     return redirect("/gamedetails")
 
-# Delete   /gamedetails/<id>/delete   /gamedetails
+# Delete   /gamedetails/delete/<id>   /gamedetails
 @gamedetails_blueprint.route("/gamedetails/delete/<id>", methods=["POST"])
 def delete_gamedetail(id):
     gamedetail_repository.delete(id)

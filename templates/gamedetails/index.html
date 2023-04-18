@@ -10,9 +10,9 @@
     <p>{{ gamedetail.team.team_name }}</p>
     <p>{{ gamedetail.result }}</p>
     <p>{{ gamedetail.played }}</p>
-    <p>{{ gamedetail.goal_score}}  and  {{ gamedetail.penalties }}</p>
-    <a href="/gamedetails/{{ gamedetails.id }}/edit">Edit:</a>
-    <form action="/gamedetails/delete/{ gamedetails.id }}" method="POST">
+    <p>{{ gamedetail.goals_score}}  and  {{ gamedetail.penalties }}</p>
+    <a href="/gamedetails/edit/{{gamedetail.id}}">Edit:</a>
+    <form action="/gamedetails/delete/{gamedetail.id}}" method="POST">
         <input type="submit" value="Delete">
     </form>
 </section>
