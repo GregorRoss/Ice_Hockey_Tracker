@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-this will be a page to show the league results
 
+{% for league in leagues %}
+
+ <section>
+
+        <img src="/static/images/{{league.team_logo}}" width="25" height="25" >Team Name: {{league.team_name }}Games Played: {{ league.games_played }}Goals: {{ league.goals }}
+
+
+</section>
+
+{% endfor %}
 
 {% endblock %}

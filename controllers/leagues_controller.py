@@ -1,7 +1,7 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.gamedetail import Gamedetail
-from repositories import gamedetail_repository, team_repository, game_repository
+from repositories import gamedetail_repository, team_repository, game_repository, league_repository
 
 leagues_blueprint = Blueprint("leagues", __name__)
 

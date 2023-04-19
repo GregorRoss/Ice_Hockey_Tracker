@@ -3,18 +3,15 @@ from models.gamedetail import Gamedetail
 from models.game import Game
 from models.team import Team
 from repositories import game_repository, team_repository
+import pdb
 
 
 def select_all():
-    gamedetails =[]
-    sql = "SELECT * FROM gamedetails"
+    league_info =[]
+    sql = "select teams.team_logo,teams.team_name, COUNT(gamedetails.id) AS games_played, SUM(gamedetails.goals_score) AS GOALS from teams INNER JOIN gamedetails ON gamedetails.team_id = teams.id GROUP BY teams.team_logo,teams.team_name ORDER BY goals DESC;"
     results = run_sql(sql)
-    for result in results:
-        game = game_repository.select(result["game_id"])
-        team = team_repository.select(result["team_id"])
-        gamedetail = Gamedetail(game,team,result["played"],result["result"],result["goals_score"],result["penalties"],result["ot"],result["id"])
-        gamedetails.append(gamedetail)
-    return gamedetails
+#    pdb.set_trace()
+    return results
 
 
 
