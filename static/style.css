@@ -7,7 +7,8 @@
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
     padding: 20px;
     font-size: 30px;
     text-align: center;
@@ -55,8 +56,46 @@ nav a:hover {
     background-color: #f0c808;
 }
 
+fieldset {
+  margin: 2em 0;
+  padding: 1em 2em;
+  border: solid 2px black;
+  border-radius: 12px;
+  min-width: 200px;
+}
 
+legend {
+  font-size: 1.25em;
+  padding: 0 .25em;
+  color: black;
+}
 
+label{
+  display: block;
+  margin-top: 1em;
+}
+
+.checks label {
+  margin-top: 0;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+input {
+  padding: .5em;
+  border: solid 1px #999;
+}
+
+input[type="submit"] {
+  padding: .5em 1em;
+  border-radius: 12px;
+  background-color: #333;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .8em;
+}
 
  
 

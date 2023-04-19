@@ -1,34 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Update Game details </h2>
 
 <form action="/gamedetails" method="POST">
-    <div>
 
-        <label for="game_id">Game ID:</label>
-        <input type="text" id="game_id" name="game_id" value = "{{gamedetail.game.id}}">
-        <br>
-        <label for="team_id">Team ID:</label>
-        <input type="text" id="team_id" name="team_id" value = "{{gamedetail.team.id}}">
-        <br>
-        <label for="played">Played:</label>
-        <input type="text" id="played" name="played" value = "{{gamedetail.played}}">
-        <br>
-        <label for="result">Result:</label>
-        <input type="text" id="result" name="result" value = "{{gamedetail.result}}">
-        <br>
-        <label for="goals_score">Goals Scored:</label>
-        <input type="text" id="goals_score" name="goals_score" value = "{{gamedetail.goals_score}}">
-        <br>
-        <label for="penalties">Penalty Minutes:</label>
-        <input type="text" id="penalties" name="penalties" value = "{{gamedetail.penalties}}">
-        <br>
-        <label for="ot">Over Time:</label>
-        <input type="text" id="ot" name="ot" value = "{{gamedetail.ot}}">
-        <br>
-        <input type="submit">
-    </div>
+    <fieldset>
+        <legend>Update Game Details </legend>
+
+            <div>
+
+                <label for="game_id">Game ID:</label>
+                <select name="game_id" id="game_id">
+                    {% for game in games %}
+                    <option value="{{game.id}}" {% if game.id == gamedetail.game.id %} selected {% endif %}>
+                        {{game.id}}
+                    </option>
+                    {% endfor %}
+                </select>
+                <label for="team_id">Team ID:</label>
+                <select name="team_id" id="team_id">
+                    {% for team in teams %}
+                    <option value="{{team.id}}" {% if team.id == gamedetail.team.id %} selected {% endif %}>
+                        {{team.team_name}}
+                    </option>
+                    {% endfor %}
+                </select>
+                <label for="played">Played:</label>
+                <input type="text" id="played" name="played" value = "{{gamedetail.played}}">
+                <label for="result">Result:</label>
+                <input type="text" id="result" name="result" value = "{{gamedetail.result}}">
+                <label for="goals_score">Goals Scored:</label>
+                <input type="text" id="goals_score" name="goals_score" value = "{{gamedetail.goals_score}}">
+                <label for="penalties">Penalty Minutes:</label>
+                <input type="text" id="penalties" name="penalties" value = "{{gamedetail.penalties}}">
+                <label for="ot">Over Time:</label>
+                <input type="text" id="ot" name="ot" value = "{{gamedetail.ot}}">
+                <input type="submit">
+            </div>
+        </fieldset>
 </form>
 
 {% endblock %}

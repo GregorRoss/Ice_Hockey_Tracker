@@ -1,24 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Add a New Game</h2>
-
 <form action="/games" method="POST">
-    <div>
-        <label for="game_date">Game Date:</label>
-        <input type="date" id="game_date" name="game_date">
-        <br>
-        <label for="game_time">Game Time:</label>
-        <input type="time" id="game_time" name="game_time">
-        <br>
-        <label for="location">Game Location:</label>
-        <input type="text" id="location" name="location">
-        <br>
-        <label for="season">Season:</label>
-        <input type="text" id="season" name="season">
-        <br>
-        <input type="submit">
-    </div>
+    <fieldset>
+        <legend>Add a New Game</legend>
+            <div>
+                <label for="game_date">Game Date:</label>
+                <input type="date" id="game_date" name="game_date">
+                <label for="game_time">Game Time:</label>
+                <input type="time" id="game_time" name="game_time">
+                <label for="location">Game Location:</label>
+                <input type="text" id="location" name="location">
+                <label for="season">Season:</label>
+                <input type="text" id="season" name="season">
+                <input type="submit">
+            </div>
+        </fieldset>
 </form>
 
 {% endblock %}
