@@ -14,7 +14,7 @@ createdb hockey
 - Once you have created the database, you will need to run the hockey SQL file against it to create the tables.
 
 ```sh
-psql -d hockey -f ./db/hockey.sql
+psql -d hockey -f ./db/icehockey.sql
 ```
 
 - Once you have created the tables you then need to run the console.py file to populate the tables with the data that will help to run the application.

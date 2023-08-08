@@ -38,17 +38,17 @@ def select(id):
     return gamedetail
 
 def delete_all():
-    sql = "DELETE FROM leagues"
+    sql = "DELETE FROM gamedetails"
     run_sql(sql)
 
 def delete(id):
-    sql = "DELETE FROM leagues WHERE id = %s"
+    sql = "DELETE FROM gamedetails WHERE id = %s"
     values = [id]
     run_sql(sql,values)
 
-def update(gamedetail):
+def update(gamedetails):
     sql = "UPDATE gamedetails SET (game_id, team_id, played, result, goals_score, penalties, ot) VALUES (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
-    values = [gamedetail.game.id, gamedetail.team.id, gamedetail.played, gamedetail.result, gamedetail.goals_score, gamedetail.penalties, gamedetail.ot, gamedetail.id]
+    values = [gamedetails.game.id, gamedetails.team.id, gamedetails.played, gamedetails.result, gamedetails.goals_score, gamedetails.penalties, gamedetails.ot, gamedetails.id]
     run_sql(sql,values)
 
 

@@ -8,7 +8,7 @@ import pdb
 
 def select_all():
     league_info =[]
-    sql = "select teams.team_logo,teams.team_name, COUNT(gamedetails.id) AS games_played, SUM(gamedetails.goals_score) AS GOALS from teams INNER JOIN gamedetails ON gamedetails.team_id = teams.id GROUP BY teams.team_logo,teams.team_name ORDER BY goals DESC;"
+    sql ="select teams.team_logo,teams.team_name, COUNT(gamedetails.id) AS games_played, SUM(gamedetails.goals_score) AS GOALS from teams INNER JOIN gamedetails ON gamedetails.team_id = teams.id GROUP BY teams.team_logo,teams.team_name ORDER BY goals DESC;"
     results = run_sql(sql)
 #    pdb.set_trace()
     return results

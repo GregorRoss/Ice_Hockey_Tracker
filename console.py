@@ -117,5 +117,4 @@ gamedetail_20 = Gamedetail(game_10,team_5,"Away","loss",0,10,"")
 gamedetail_repository.save(gamedetail_20)
 
 
-pdb.set_trace()
 

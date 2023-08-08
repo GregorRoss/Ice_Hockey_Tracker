@@ -1,25 +1,41 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-left: 30%;
   }
   .grid-item {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid rgba(0, 0, 0, 0.8);
+    border: solid black;
     border-radius: 50%;
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
+    width: 150px;
+    height: 150px;
+    align-content: center;
   }
+
+.grid-item img {
+    width: 90%;
+    height: 90%;
+}
+
 
   .container {
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
+    align-content: center;
     margin: 0 auto;
+    width: 80%;
   }
+
+  .league-container {
+    display:flex;
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+
+  .league-container img {
+        vertical-align: middle;
+  }
+
   .eihllogo {
     float: left;
   }
@@ -75,6 +91,8 @@ label{
   margin-top: 1em;
 }
 
+
+
 .checks label {
   margin-top: 0;
 }
@@ -95,6 +113,8 @@ input[type="submit"] {
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: .8em;
+  float: right;
+ 
 }
 
 section > img {
@@ -102,6 +122,17 @@ section > img {
   padding-top: 1px;
 }
 
- 
+.TeamInfo{
+  padding: 1em;
+}
+.teamGameDetails{
+  border: solid .25em black;
+  padding: .5em;
+  margin: .5em;
+}
+
+table {
+  border: solid 1px red;
+}
 
 

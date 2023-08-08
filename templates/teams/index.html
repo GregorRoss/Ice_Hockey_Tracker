@@ -4,16 +4,19 @@
 <h2>Teams</h2>
 <br>
 <a href="/teams/new">Add Team</a>
-
+<div class="grid-container">
 {% for team in teams %}
  
-<div class="grid-container">
+
+
     <div class="grid-item">
         <a href="/teams/show.html/{{team.id}}">
-        <img src="/static/images/{{team.team_logo}}" width="60" height="60">
+        <img src="/static/images/{{team.team_logo}}">
         </a>
     </div>
-</div>
+
 
 {% endfor %}
+</div>
+
 {% endblock %}
