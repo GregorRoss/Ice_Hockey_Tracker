@@ -2,7 +2,7 @@
 <h1 align="center"> Ice Hockey Tracker</h1>
 <h2 align="center">
 
-<img src="//Documents/ApplicationImage.png">
+<img src="./Documents/ApplicationImage.png" width="100%">
 
 </h2>
 
