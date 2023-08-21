@@ -7,7 +7,7 @@
 </h2>
 
 ## *1. Overview*
-- Situation
+<h5> - Situation </h5>
 consolidate and expand on everything learned Web Programming with Python
 * Object oriented programming with Python
 * Test Driven Development
@@ -20,7 +20,7 @@ The Project must built uisng only:
 * Flask
 * PostgreSQL and psycopg
 
-- Task
+<h5>- Task </h5>
 <h3>Sports Scoring app</h3>
 Build an app that lets a sport fan keep track of their favourite sports league.
 MVP:
@@ -32,11 +32,11 @@ Extensions:
 * Create a league table to see who is on top of the league
 * Add penalties / fouls with information on them.
 
-- Action
+<h5>- Action </h5>
 Created an ice hockey tracking app that was based on the British Elite Ice hockey league.
 in the documentation folder you will find my design images that I used when thinking about how this could be created. I also used multiple tables with many to many relations across the tables.
 
-- Result
+<h5>- Result </h5>
 Presented the application at the end of the week to the class, demonstrating the Create, Read, Update and Delete (CRUD)functionality. also showed the design process where I was the only one in the class to use multiple tables and show the Many to many relationships through the app.
 
 ## *2. Set-up*
