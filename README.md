@@ -22,7 +22,7 @@ The Project must built uisng only:
 
 - Task
 <h3>Sports Scoring app</h3>
-Build an app that lets a spoart fan keep track of their favourite sports league.
+Build an app that lets a sport fan keep track of their favourite sports league.
 MVP:
 * The app should allow the user to create, edit and remove teams
 * The user should be able to create new games
@@ -31,6 +31,13 @@ MVP:
 Extensions:
 * Create a league table to see who is on top of the league
 * Add penalties / fouls with information on them.
+
+- Action
+Created an ice hockey tracking app that was based on the British Elite Ice hockey league.
+in the documentation folder you will find my design images that I used when thinking about how this could be created. I also used multiple tables with many to many relations across the tables.
+
+- Result
+Presented the application at the end of the week to the class, demonstrating the Create, Read, Update and Delete (CRUD)functionality. also showed the design process where I was the only one in the class to use multiple tables and show the Many to many relationships through the app.
 
 ## *2. Set-up*
 - Install Python3
