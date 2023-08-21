@@ -21,19 +21,29 @@
                         </option>
                         {% endfor %}
                     </select>
-                    <label for="played">Played:</label>
-                    <input type="text" id="played" name="played">
-                    <label for="result">Result:</label>
-                    <input type="text" id="result" name="result">
+                    <fieldset>
+                        <legend> Played : </legend>
+                        <label style="display: inline" for="home">Home:<input type="radio" id="home" name="played" value="Home"></label>
+                        <label style="display: inline" for="away">Away: <input type="radio" id="away" name="played" value="Away"></label>
+                    </fieldset>
+                    <fieldset>
+                        <legend> Result : </legend>
+                        <label style="display: inline" for="win">Win:<input type="radio" id="win" name="result" value="Win"></label>
+                        <label style="display: inline" for="loss">Loss: <input type="radio" id="loss" name="result" value="Loss"></label>
+                    </fieldset>
+
                     <label for="goals_score">Goals Scored:</label>
                     <input type="text" id="goals_score" name="goals_score">
                     <label for="penalties">Penalty Minutes:</label>
                     <input type="text" id="penalties" name="penalties">
-                    <label for="ot">Over Time:</label>
-                    <input type="text" id="ot" name="ot">
+                    <fieldset>
+                        <legend> Overtime : </legend>
+                        <label style="display: inline" for="yes">Yes:<input type="radio" id="yes" name="ot" value="Yes"></label>
+                        <label style="display: inline" for="no">No: <input type="radio" id="no" name="ot" value="No"></label>
+                    </fieldset>
                     <input type="submit">
                 </div>
-        <fieldset>
+            </fieldset>
 </form>
 
 {% endblock %}

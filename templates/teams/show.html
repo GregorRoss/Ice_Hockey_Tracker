@@ -10,9 +10,8 @@
     <p>Team Location: {{ team.arena_location }}</p>
     <p>Team Website: {{ team.team_website}}</p>
 
-    <p>
-    <a href="/teams/edit/{{team.id}}"> Edit</a>
-    </p>
+    <button type="button" onclick="location.href='/teams/edit/{{team.id}}'"> Edit </button>    
+ 
     <form action="/teams/delete/{{team.id}}" method="POST">
         <input type="submit" value="Delete">
     </form>
@@ -33,8 +32,10 @@
     
 
     <h2>Away</h2>
+    <h3>
     {{pair["away_name"]}}
     {{pair["away"].result}}
+    </h3>
     <p>goals: {{pair["away"].goals_score}}</p>
     <p>Played: {{pair["away"].played}}</p> 
     <p>Penalty Minutes: {{pair["away"].penalties}}</p>

@@ -36,6 +36,15 @@
         vertical-align: middle;
   }
 
+  .league-table {
+    border-radius: 8%;
+    border: solid .025em darkgray;
+    box-shadow: .25em .25em .25em currentColor;
+    padding: .025em;
+    margin: .25em;
+
+  }
+
   .eihllogo {
     float: left;
   }
@@ -74,7 +83,7 @@ nav a:hover {
 
 fieldset {
   margin: 2em 0;
-  padding: 1em 2em;
+  padding: 0.5em 1em;
   border: solid 2px black;
   border-radius: 12px;
   min-width: 200px;
@@ -114,8 +123,27 @@ input[type="submit"] {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: .8em;
   float: right;
- 
-}
+ }
+
+ input[type="radio"] {
+  padding: .5em 1em;
+  border-radius: 12px;
+  background-color: #333;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .8em;
+  float:inline-end;
+ }
+
+ button{
+  padding: .5em 1em;
+  border-radius: 12px;
+  background-color: #333;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: .8em;
+  float: right;
+ }
 
 section > img {
   vertical-align: middle;
@@ -126,9 +154,20 @@ section > img {
   padding: 1em;
 }
 .teamGameDetails{
-  border: solid .25em black;
+  border-radius: 8%;
+  border: solid .025em darkgray;
+  box-shadow: .5em .5em .5em currentColor;
   padding: .5em;
   margin: .5em;
+}
+.gameIndex {
+  border-radius: 8%;
+  border: solid .025em darkgray;
+  box-shadow: .5em .5em .5em currentColor;
+  padding: .5em;
+  margin: .5em;
+  display: inline;
+  width: auto;
 }
 
 table {

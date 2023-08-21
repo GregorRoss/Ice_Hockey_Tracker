@@ -1,5 +1,10 @@
 
-# **Project Ice Hockey Tracker**
+<h1 align="center"> Ice Hockey Tracker</h1>
+<h2 align="center">
+
+<img src="//Documents/ApplicationImage.png">
+
+</h2>
 
 
 ## *1.Set Up*
