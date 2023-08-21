@@ -21,7 +21,7 @@ The Project must built uisng only:
 * PostgreSQL and psycopg
 
 <h5>- Task </h5>
-<h3>Sports Scoring app</h3>
+<h4>Sports Scoring app</h4>
 Build an app that lets a sport fan keep track of their favourite sports league.
 MVP:
 * The app should allow the user to create, edit and remove teams
@@ -51,7 +51,7 @@ cd my_web_app
 ```
 then run the following command to install Flask
 ```sh
-#terminal
+# terminal
 pip3 install Flask
 ```
 you will need PostgreSQL as this will host the database you will need.
@@ -73,6 +73,7 @@ psql       # this will launch the sql terminal
 - First, you will need to ensure that you have a database called hockey.
 
 ```sh
+# terminal
 dropdb hockey
 createdb hockey
 ```
@@ -80,19 +81,22 @@ createdb hockey
 - Once you have created the database, you will need to run the hockey SQL file against it to create the tables.
 
 ```sh
+# terminal
 psql -d hockey -f ./db/icehockey.sql
 ```
 
 - Once you have created the tables you then need to run the console.py file to populate the tables with the data that will help to run the application.
 
-'''sh
+```sh
+# terminal
 python3 console.py
-'''
+```
 - now that you have the database populated and fully up and running you can run the Flask web server to get things up and running. from the Ice_hockey_tracker folder start flask from the terminal screen.
 
-'''sh
+```sh
+# terminal
 flask run
-'''
+```
 
 
 
