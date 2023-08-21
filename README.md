@@ -6,8 +6,62 @@
 
 </h2>
 
+## *1. Overview*
+- Situation
+consolidate and expand on everything learned Web Programming with Python
+* Object oriented programming with Python
+* Test Driven Development
+* Web Programming (REST, MVC)
+* Interacting with a PostgreSQL database (CRUD)
 
-## *1.Set Up*
+The Project must built uisng only:
+* HTML / CSS
+* Python
+* Flask
+* PostgreSQL and psycopg
+
+- Task
+<h3>Sports Scoring app</h3>
+Build an app that lets a spoart fan keep track of their favourite sports league.
+MVP:
+* The app should allow the user to create, edit and remove teams
+* The user should be able to create new games
+* There should be a way to display all the games for a team and all the teams involved in a game
+* The app should display if a game was won or lost
+Extensions:
+* Create a league table to see who is on top of the league
+* Add penalties / fouls with information on them.
+
+## *2. Set-up*
+- Install Python3
+- Install Flask, using Pip (package manager)
+create folder
+```sh
+# terminal
+
+mkdir my_web_app
+cd my_web_app
+```
+then run the following command to install Flask
+```sh
+#terminal
+pip3 install Flask
+```
+you will need PostgreSQL as this will host the database you will need.
+[PostreSQL](https://www.postgresql.org)
+
+to check that psql is installed, type the following.
+```sh
+# terminal
+which psql   # this will show the path that postgresql was installed
+
+psql       # this will launch the sql terminal
+
+
+\q       # this will quit the sql terminal
+```
+
+## *3. Running the app*
 
 - First, you will need to ensure that you have a database called hockey.
 
